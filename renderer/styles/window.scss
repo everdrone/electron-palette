@@ -1,0 +1,101 @@
+.titlebar {
+  height: 30px;
+  width: 100%;
+  position: relative;
+  @apply bg-primary-500 text-primary-200;
+  @apply border-primary-900;
+  border-bottom-width: 1px;
+}
+
+.menu {
+  @apply pl-2 flex items-center text-sm;
+}
+
+.title {
+  @apply px-4 flex items-center text-xs;
+}
+
+:root {
+  --app-bar-height: 30px;
+}
+
+.controls {
+  height: 100%;
+  .icon {
+    @apply flex items-center justify-center;
+    @apply bg-primary-500 text-primary-200 cursor-default;
+    @apply betterhover:hover:bg-alternate-500;
+    width: 46px;
+
+    &.close {
+      @apply bg-primary-500 text-primary-200 cursor-default;
+      @apply betterhover:hover:bg-red-500 betterhover:hover:text-white;
+    }
+  }
+}
+
+#main-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: var(--app-bar-height);
+  overflow-y: auto;
+}
+
+.dialog-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: var(--app-bar-height);
+  overflow-y: auto;
+
+  .overlay {
+    position: absolute;
+  }
+}
+
+.palette {
+  @apply fixed z-50;
+  width: 80%;
+  max-width: 680px;
+  margin: 10vh auto;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @apply border border-primary-900;
+
+  input {
+    width: 100%;
+    @apply placeholder-alternate-400;
+  }
+
+  .search-input {
+    @apply px-4 py-3 bg-alternate-500 text-primary-200;
+  }
+
+  .option {
+    &:first-child {
+      @apply border-t border-primary-900 pt-2;
+    }
+    &:last-child {
+      @apply pb-2;
+    }
+    @apply px-2 cursor-pointer;
+
+    .icon {
+      @apply pr-2;
+    }
+
+    .inner {
+      @apply px-2 py-2 rounded-md;
+    }
+
+    &.active {
+      .inner {
+        @apply bg-primary-400;
+      }
+    }
+  }
+}

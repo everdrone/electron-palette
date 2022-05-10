@@ -1,0 +1,61 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+button {
+  @apply select-none;
+}
+
+input,
+select {
+  @apply focus:outline-none;
+  @apply bg-primary-500 text-primary-200 placeholder-primary-400;
+  @apply p-3;
+}
+
+.codicon-button {
+  @apply inline-flex cursor-pointer text-accent p-1;
+  &.danger {
+    @apply text-reddish;
+    &:hover {
+      @apply text-reddish;
+      .inner {
+        @apply bg-alternate-500;
+      }
+      p {
+        @apply text-reddish;
+      }
+    }
+  }
+
+  .inner {
+    @apply p-2 rounded-md;
+
+    p {
+      @apply ml-2 mr-1 leading-none text-sm;
+    }
+  }
+
+  &:hover {
+    @apply text-accent;
+    .inner {
+      @apply bg-alternate-500;
+    }
+    p {
+      @apply text-accent;
+    }
+  }
+}
+
+.push-button {
+  @apply cursor-pointer px-3 py-2 rounded-md font-semibold text-sm leading-none;
+  @apply bg-primary-300 text-primary-900 hover:bg-accent;
+  &.danger {
+    @apply hover:bg-reddish;
+  }
+}

@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #97e1ff;
+}
+
+@layer utilities {
+  .app-drag {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-app-region: drag;
+  }
+
+  .app-no-drag {
+    -webkit-app-region: no-drag;
+  }
+}
+
+:root {
+  --fallback-title-bar-height: 40px;
+}
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('/fonts/CascadiaCode-ExtraLight.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('/fonts/CascadiaCode-Light.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('/fonts/CascadiaCode-SemiLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('/fonts/CascadiaCode-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('/fonts/CascadiaCode-SemiBold.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('/fonts/CascadiaCode-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-alternate-500;
+  }
+
+  a {
+    @apply text-accent;
+  }
+}
+
+#title-bar-container {
+  position: absolute;
+  top: env(titlebar-area-y, 0);
+  height: calc(env(titlebar-area-height, 0) + 1px);
+  width: 100%;
+  @apply bg-primary-500 text-primary-200;
+}
+
+#title-bar {
+  position: absolute;
+  top: 0;
+  display: flex;
+  user-select: none;
+  height: 100%;
+  left: env(titlebar-area-x, 0);
+  width: env(titlebar-area-width, 100%);
+}
+
+#main-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: calc(env(titlebar-area-height, 0) + 1px);
+  overflow-y: scroll;
+}

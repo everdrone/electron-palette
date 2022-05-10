@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "Typesensor",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
+  "scripts": {
+    "dev": "nextron",
+    "build": "nextron build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@monaco-editor/loader": "^1.3.0",
+    "@monaco-editor/react": "^4.4.2",
+    "clsx": "^1.1.1",
+    "electron-serve": "^1.1.0",
+    "electron-store": "^8.0.1",
+    "fuse.js": "^6.5.3",
+    "overmind": "^28.0.1",
+    "overmind-react": "^29.0.1",
+    "react-icons": "^4.3.1",
+    "react-no-ssr": "^1.1.0",
+    "validate-color": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.0",
+    "autoprefixer": "^10.3.5",
+    "electron": "^17.1.2",
+    "electron-builder": "23.0.2",
+    "next": "^12.1.0",
+    "nextron": "^8.0.0",
+    "postcss": "^8.3.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.50.0",
+    "tailwindcss": "^2.2.15",
+    "typescript": "^4.6.2"
+  }
+}
